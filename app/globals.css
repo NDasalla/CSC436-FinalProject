@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer components {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  body {
+    color: #ffffff;
+    background-color: #fff5ee;
+  }
+
+  .button {
+    @apply text-3xl lg:h1 pb-3 mb-2 text-center line-clamp-1 active:relative active:top-[4px] active:shadow-[2px_2px_0px_#000000] active:shadow-none bg-purple border-black box-border shadow-[4px_4px_0px_#000000] border-4 w-full px-[32px];
+  }
+
+  .button:disabled {
+    @apply pointer-events-none bg-gray-300 opacity-40;
+  }
+
+  .button.small {
+    @apply text-lg pb-1 w-auto text-black;
+  }
+
+  .buttonText {
+    @apply max-w-sm mx-auto text-center font-bold text-black;
+  }
+
+  .buttonInside {
+    @apply bg-seashell border-4 border-black mb-4 mt-5;
+  }
+
+  .h1,
+  .h2 {
+    @apply leading-none;
+  }
+
+  .h1 {
+    @apply text-5xl;
+  }
+
+  .h2 {
+    @apply text-3xl;
+  }
+
+  .h3 {
+    @apply text-2xl;
+  }
+
+  .heading {
+    @apply font-bold text-black text-center mx-auto;
+  }
+
+  /* .barge {
+    @apply w-[390px] lg:w-[500px] mx-auto px-[46px];
+  } */
+
+  /* .font {
+  } */
 }
